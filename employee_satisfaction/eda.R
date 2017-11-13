@@ -1,0 +1,7 @@
+emp <- read.table("C:/Users/David/Desktop/STAT 536/Employee/Employee.txt",header=TRUE)
+pairs(emp)
+sapply(emp, function(x) sum(length(which(is.na(x)))))
+nrow(na.omit(emp[,4:5]))
+dim(na.omit(emp))
+library(car)
+av.plots(lm(JobPerf~.,data=emp))
