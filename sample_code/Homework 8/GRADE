@@ -1,0 +1,8 @@
+14.5 out of 15.0
+
+(-0.0) dvonmises.R
+(-0.0) rejection-sampler.R
+(-0.5) rvonmises.R
+  - 'use.normalizing.constant' needs to equal TRUE
+(-0.0) show.vonmises.R
+

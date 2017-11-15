@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>STAT 624 with Dr. Dahl</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+  </head>
+
+<body>
+
+<h1>Homework 9</h1>
+Due 2016-11-10 at the start of lecture.<br><br>
+
+<ol>
+
+  <li><b>Poisson Regression, Round II:</b>  Implement the function described in <a href="poisson-regression.R">poisson-regression.R</a>.  Do not change the script name.</li>
+
+  <li><b>Simulation Study for Poisson Regression:</b>
+Consider the poisson regression in the previous problem.  Your task now is to
+conduct a simulation study in a script named "simulation.R" that explores the
+long run relative-frequency performance of the following estmators for beta:
+<ul>
+<li>Maximum likelihood estimator</li>
+<li>Bayes estimator under squared-error loss where the prior distribution on beta is a normal distribution with mean 0.4 and variance of 0.2^2.</li>
+<li>Bayes estimator under 0-1 loss where the prior distribution on beta is uniform on -5 to 5.</li>
+</ul>
+
+Specifically, you are to estimate the bias and mean squared error (MSE) of the
+estimators of beta when the true value of beta varies from 0 to 0.8 in
+increments of 0.05 for fixed data x_1, ..., x_n being 0.91, 2.34, 2.54, 1.57,
+1.63, 1.08, 0.30, 0.90, 0.08, 2.01, 1.5, 1.2.  In one plot, produce a
+publication-ready PDF file named "mse.pdf" showing the MSE vs. beta for each of
+the three estimators.  Do the same for the bias and name it "bias.pdf".  Write
+a summary of your findings in a file "memo.tex" that gives your high-level
+conclusions from this simulation study, including the two figures that your
+produced.
+
+  </li>
+
+  <li>Submit this homework by committing the necessary files in the appropriate
+directory and pushing to your central Git repository.  Remember to not commit
+files that are easily reproducible.</li> 
+
+</ol>
+
+</body>
+</html>
+

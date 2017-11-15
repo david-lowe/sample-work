@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>STAT 624 with Dr. Dahl</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+  </head>
+
+<body>
+
+<h1>Homework 4</h1>
+Due 2016-09-27 at the start of lecture.<br><br>
+
+<ol>
+  <li>Study Chapters 16-18 of <a href="../linux-commandline.pdf">Shotts</a>.</li>
+  <li>Study Chapters 6, 9, &amp; 19 of Jones, Maillardet, &amp; Robinson.</li>
+
+  <li> Write an executable R script called "random-normals" which generates X
+normally distributed random numbers with mean M and standard deviation V using
+the Box-Muller transformation, where X, M, and V are supplied as command line
+arguments.  In an R script named "plot-normals.R", source your "random-normals"
+file and use its code to generate 1,000 standard normal random deviates and
+produce one figure in a file called "box-muller.pdf" containing the following:
+<ul> <li>A kernel density estimate of your normally distributed random numbers.
+(Hint: use the "plot" function on the object produced by the "density" function
+in R.),</li> <li>The theoretical density (in red) of the distribution from
+which your normally distributed random numbers are drawn.</li> </ul> </li>
+
+  <li>Write an executable R script named "combn" that takes two command line
+arguments: N &amp; K, where both are integers and 1 &le; K &le; N.  Display a
+helpful message when the script is invoked with inappropriate arguments.  Write
+to standard output all possible combinations of the elements of {1,...,N} taken
+K at a time as follows. Randomize the order in which the combinations are
+displayed and, for each combination, randomize the order of the K elements.
+Your code should display exactly 'choose(N,K)' lines, with each line containing
+only K elements separated by a space.  No superfluous output should be
+displayed.  Hint: Generating all the combinations (in a non-random order) is
+easily accomplished with a builtin function in R.</li>
+
+  <li> <i>This part of the project will give you experience implementing Monte
+Carlo power calculations.</i> Download the <a href="../l07/urn.R">urn.R</a> file for
+our recent lecture.  Add code at the bottom to answer the following:  1. If the
+level of significance is 0.05, what is the rejection region for this problem?
+2. If the true proportion of black balls is 0.6, what is the power of the test
+for the null hypothesis that the proportion of black balls is 0.5, versus the
+one-side alternative that the proportion is greater than 0.5?  3. What is the
+power if the true proportion is 0.7?  In answering these questions, be sure to
+assess the Monte Carlo error.</li>
+
+  <li> Using the hit-and-miss method, find the area defined by the region
+{(x,y): x^2 + y^2 &le; 0.5, x^2 &le; y &le; x }.  As always, assess your Monte
+Carlo error.  Submit your solution in a file named "area.R"</li>
+
+  <li> Using Monte Carlo integration, find the integral of the function f(x) =
+1-2/pi*(1-x)^2*exp(x)/x*asin(sqrt(x)) for x in [0,1].  Be more creative that
+simply sampling from the uniform distribution.  As always, assess your Monte
+Carlo error.  Submit your solution in a file named "integral.R"</li>
+
+  <li>Consider the usual introductory statistics formula for a 100(1-alpha)%
+confidence interval on the population mean assuming that the population is
+normally distributed and that the population standard deviation is not known.
+Write a function named 'sample.size' that returns the sample size that should
+be used such that there is probability 'p' that the width of a 100(1-alpha)%
+confidence interval is (no more than) 'width' when the actual (but unknown)
+standard deviation is 1.  Your calculation should use Monte Carlo methods based
+on 'nSamples' replications.  The function signature should be:<br>
+
+<span class="mono">sample.size &lt;- function(p,width,alpha,nSamples)</span><br>
+
+Now, still use the same formula, but suppose the population can be
+exponentially distributed with rate 1.  Modify your function to take another
+argument 'dist' which equals either 'normal' or 'exponential' to accommodate
+both cases.  Only submit your second function in a file named
+"sample-size.R".</li>
+
+  <li>Submit this homework by committing the necessary files (including any
+data files) in the appropriate directory and pushing to your central Git
+repository.  Remember to not commit files that are easily reproducible.</li> 
+
+</ol>
+
+</body>
+</html>
+

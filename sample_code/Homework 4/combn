@@ -1,0 +1,32 @@
+#!/usr/bin/env Rscript
+
+args <- as.numeric(commandArgs(TRUE))
+N <- args[1]
+K <- args[2]
+
+comb <- function(N,K){
+  if(K%%1 != 0 || K < 1 || K > N){stop("K must be an integer greater than or equal to one, and must be less than N.")}
+  if(N%%1 != 0 || N < 1){stop("N must be an integer greater than or equal to one.")}
+  if(K == 1 && N > 1){
+    x <- t(combn(1:N,K))
+    y <- sample(x,N)
+    z <- as.data.frame(y)
+    names(z) <- " "
+    print(z, row.names=F)
+  }else{
+    x <- (combn(1:N,K))
+    y <- split(x,rep(1:ncol(x),each=nrow(x)))
+    z <- t(sapply(y,sample))
+    a <- z[sample(nrow(z)),]
+    if(N==K){
+      b <- as.data.frame(t(a))
+    }else{
+      b <- as.data.frame(a)
+    }
+    names(b) <- rep(" ",ncol(b))
+    print(b, row.names=FALSE)
+  }
+}
+
+comb(N,K)
+

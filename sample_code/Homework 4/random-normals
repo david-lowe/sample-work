@@ -1,0 +1,35 @@
+#!/usr/bin/env Rscript
+
+r.norm <- function(X,M=0,V=1){
+  u1 <- runif(X%/%2,0,1)
+  u2 <- runif(X%/%2,0,1)  
+  x1 <- M + V*sqrt(-2*log(u1))*cos(2*pi*u2)
+  x2 <- M + V*sqrt(-2*log(u1))*sin(2*pi*u2)
+  
+  if(X%%2==1){
+    u1 <- runif(1,0,1)
+    u2 <- runif(1,0,1)
+    x1 <- c(x1, M + V*sqrt(-2*log(u1))*cos(2*pi*u2))
+  }
+  
+  z <- c(x1,x2)
+  z 
+}
+
+
+args <- as.numeric(commandArgs(TRUE))
+
+suppressWarnings(
+  if(length(args) == 3){
+    X <- args[1]
+    M <- args[2]
+    V <- args[3]
+    draws <- r.norm(X,M,V)
+    if(NA %in% draws){
+      stop("There must be three numeric arguments: n.draws, mean, standard deviation.")
+    }else{
+      draws
+    }
+  }
+)
+ 

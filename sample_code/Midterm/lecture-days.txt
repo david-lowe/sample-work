@@ -1,0 +1,21 @@
+A professor who teachs classes on Tuesdays and Thursdays at BYU wants the dates
+of every lecture for a given semester.  Write an executable R script named
+'lecture-days' that writes to standard output only the Tuesdays and Thursdays
+between two dates (inclusive) passed as command line arguments in the format
+YYYY-MM-DD.  Additional command line arguments are optional and give dates that
+should be excluded from the list.  For example, Fall 2016 at BYU is from Sept.
+29, 2016 to Dec. 8, 2016, inclusive, but Nov. 22 (a Friday instruction day) and
+Nov. 24 (Thanksgiving) are not lecture days.  In this case, the professor would
+use the following command:
+
+./lecture-days 2016-09-29 2016-12-08 2016-11-22 2016-11-24
+
+Display each day on its own line and use, for example, the formatting such that
+Oct. 29, 2016 is displayed as 2016-09-29.
+
+A few notes: If insufficient arguments are passed, display a helpful message.
+You do *not* need to verify that each command line argument is a valid date.
+You may use the internet but cannot post to a forum.  For full credit, use
+vector operations instead of explicit loops.  You may find the 'as.Date'
+function helpful.
+

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>STAT 624 with Dr. Dahl</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+  </head>
+
+<body>
+
+<h1>Homework 8</h1>
+Due 2016-11-03 at the start of lecture.<br><br>
+
+<ol>
+  <li>Study Chapters 34-36 of <a href="../linux-commandline.pdf">Shotts</a>.  Congratulations!  You finished the book.</li>
+
+  <!-- <li>Study Chapters 12 of Jones, Maillardet, &amp; Robinson.</li> -->
+
+  <li><b>The Sine Model Version of the Bivariate Von Mises Distribution:</b>
+
+  Consider the sine model of the von Mises distribution described in Section 2.2 of a <a href="http://dahl.byu.edu/papers/lennox-dahl-vannucci-tsai-2009.pdf">paper</a>.
+  (You will need to read all of Section 2 to understand the notation.)
+  Write a function named 'dvonmises' with signature 'function(x,mu,nu,kappa1,kappa2,lambda,log=FALSE,use.normalizing.constant=TRUE)' which evaluates the density (or, if 'log=TRUE', the natural logarithm of the density) of the
+  sine model of the bivariate von Mises distribution for the supplied parameters at the angle pair given by x.  In the case of 'use.normalizing.constant=FALSE', the result is given without the normalizing constant.  Notice that the normalizing constant involves infinite sums,
+  something that the computer cannot do.  The computer can, however, approximate the infinite sum with a finite sum.  Your implementation should seek to find a solution that balances numerical accuracy, efficiency, and speed.  Put your function in a script named 'dvonmises.R'.  Your script should have no other code.
+
+  </li>
+
+<li><b>Implementing the Rejection Sampler:</b>
+
+  Your task is to implement the function for rejection sampling in the script <a href="../l15/rejection-sampler-template.R">rejection-sampler.R</a>.  Do not change anything in this file except the <em>body</em>
+  of the function.  Your function should be <em>completely generic</em> (e.g., do <em>not</em> assume that it will be used to sample from any particular distribution, such as a beta or von Mises distribution).  Please be sure to test your function (but do <i>not</i> submit your testing code).
+
+  </li>
+
+<li><b>Using Rejection Sampler for the Bivariate Von Mises Distribution:</b>
+
+  Using your code from the previous parts, write a function named 'rvonmises' with signature 'function(n,mu,nu,kappa1,kappa2,lambda)' which generates 'n' independent and identically distributed
+  realizations of the sine model von Mises distribution for the supplied parameters.  The result of the function should be an 'n' by 2 matrix.  Insights into the implementation are given in the second
+  paragraph in Section 4.2 of the paper, which references <a href="http://www3.interscience.wiley.com/cgi-bin/fulltext/118538397/PDFSTART">Mardia, et. al. (2007)</a> and that paper's
+  <a href="http://www.biometrics.tibs.org/datasets/060139_supp_materials.pdf">appendix</a>.   See, in particular, Theorem 3 of the appendix.
+  (You should have access to the paper when within the University network and the appendix from anywhere.)  Put your function in a script named 'rvonmises.R'.  Again, your script should have no code other than the function definition.
+
+  </li>
+
+<li><b>Contour plots for the Bivariate Von Mises Distribution:</b>
+
+  Write an R function named 'show.vonmises' with signature 'function(n,mu,nu,kappa1,kappa2,lambda,show.contours=TRUE)' which uses the previous parts to plot contours of the specified sine model density as well as 'n' realizations
+  from that distribution.  Note that plotting the contours can be disabled if 'show.contours=FALSE'.  Likewise, if 'n' can be zero, no realizations are displayed.  Explore many different combinations of parameter settings to convince yourself that your code is correct.
+
+  </li>
+
+<li><b>Checking Your Code:</b>
+
+  You can get check your code by comparing your results against those produced by code in the <a href="../examples/vonmises-demo">'vonmises-demo' directory</a>.
+
+  </li>
+
+  <li>Submit this homework by committing the requested files in the appropriate directory and pushing to your central Git repository.</li>
+
+</ol>
+
+</body>
+</html>
+

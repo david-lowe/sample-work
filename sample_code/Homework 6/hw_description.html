@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>STAT 624 with Dr. Dahl</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+  </head>
+
+<body>
+
+<h1>Homework 6</h1>
+Due 2016-10-11 at the start of lecture.<br><br>
+
+<ol>
+  <li>Study Chapters 27-29 of <a href="../linux-commandline.pdf">Shotts</a>.</li>
+  <li>Study Chapter 10 &amp; 12 of Jones, Maillardet, &amp; Robinson.</li>
+
+  <li>Design and execute a simulation study to investigate the performance of
+the paired t-test and the paired permutation test.  Investigate: (i) the size
+of the test under the null hypothesis that there is no difference and the
+power under several alternative values for the mean difference, (ii) several
+sample sizes, and (iii) the case when the data is normally distributed and the
+case when the data is highly skewed (e.g., a Beta(0.1,1) shifted
+by some value).  Use parallel computing facilities in R to speed up your
+simulation study.  Since our server is a shared resource, limit your code to
+four cores.  Save your R code in a file called 'simulation.R'.  Write a memo in
+a LaTeX file 'memo.tex' that describes your design, execution, and results of
+the simulation study to be read by your statistician boss.</li>
+
+  <li>Recall that the script 'root-finding.R' from a previous lecture sourced
+two files --- named 'secant.R' and 'bisection.R' --- to define the 'secant' and
+'bisection' functions.  Provide your own implementation of these functions
+using the same filenames.  Make your code as efficient as possible, evaluating
+the supplied function as few times as possible.  Also, make your functions
+general so they will work with other inputs than those used in the
+examples.</li>
+
+  <li>In a previous homework assignment, you wrote a function 'sample.size'
+that calculated the number of observations needed to obtain a confidence
+interval with desirable properties.  The naive approach was this: (i) run a
+little simulation study when the sample size was 'n', (ii) check to see if the
+intervals have the desired properties, and (iii) increment 'n' and repeating
+the previous steps until the intervals have the desired properties.  Rewrite
+your 'sample.size' function to use a computationally efficient root-finding
+algorithm that you implemented for the previous problem.  Name your script
+'sample-size.R'.  State in an R comment which algorithm you are using and
+why.</li>
+
+  <li>Submit this homework by committing the necessary files (including any
+data files) in the appropriate directory and pushing to your central Git
+repository.  Remember to not commit files that are easily reproducible.</li> 
+
+</ol>
+
+</body>
+</html>
+
